@@ -1,9 +1,6 @@
 
 
 
-
-
-
 let redUpperLimit = 255;
 let greenUpperLimit = 255;
 let blueUpperLimit = 255;
@@ -16,6 +13,10 @@ let randomRed = 0;
 let randomGreen = 0;
 let randomBlue = 0;
 
+let allColorUpperLimit = 10;
+let allColorLowerLimit = 0;
+let allColorSelected = 0;
+
 
 
 const newColorBtn = document.getElementById('newColorBtn');
@@ -26,7 +27,8 @@ newColorBtn.addEventListener("click", changeColor);
 
 function getColorFromAll(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
+
 
 function getRed(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -48,6 +50,14 @@ function getColor() {
     randomGreen = getGreen(greenLowerLimit, greenUpperLimit);  //Get new random green within upper and lower limits
     randomBlue = getBlue(blueLowerLimit, blueUpperLimit);  //Get new random blue within upper and lower limits
     
+};
+
+function getAllColorNumber() {
+    
+    allColorSelected = getColorFromAll(allColorLowerLimit, allColorUpperLimit);
+
+    //console.log('all color number has run.')
+
 };
 
 
@@ -73,6 +83,8 @@ function changeColor() {
     changeColorBox.style.backgroundColor = randomRGB;  //Set the background color of the colorBox
 
     document.getElementById('rgbVariable').innerHTML = randomRGB;
+
+    //console.log("should change.")
 }
 
 
@@ -85,85 +97,33 @@ function ifColorSelected() {
     
     
     //below lines are for all colors
-    if (document.getElementById("chooseColor").value == "all") {
-        
-        if (document.getElementById("chooseShade").value == "light") {
+    if (document.getElementById("chooseColor").value == "0") {
 
-            console.log('light all')
-            
-            redUpperLimit = 255;
-            redLowerLimit = 120;
-            greenUpperLimit = 255;
-            greenLowerLimit = 120;
-            blueUpperLimit = 255;
-            blueLowerLimit = 120;
-            
-            getColor();
-            
-            //return `RGB(0,0,0)`  //use this line to test the extremes.
-            
-            return `RGB(${randomRed},${randomGreen},${randomBlue})`
-        }
+        allColorUpperLimit = 10;
+        allColorLowerLimit = 1;
+        allColorSelected = 0;
         
-        else if (document.getElementById("chooseShade").value == "dark") {
+        getAllColorNumber();
 
-            console.log('dark all')
-            
-            redUpperLimit = 130;
-            redLowerLimit = 0;
-            greenUpperLimit = 130;
-            greenLowerLimit = 0;
-            blueUpperLimit = 130;
-            blueLowerLimit = 0;
-            
-            getColor();
-            
-            //return `RGB(0,0,0)`  //use this line to test the extremes.
-            
-            return `RGB(${randomRed},${randomGreen},${randomBlue})`
-        }
-        
-        else if (document.getElementById("chooseShade").value == "medium") {
-            
-            console.log('medium all')
-            
-            redUpperLimit = 255;
-            redLowerLimit = 0;
-            greenUpperLimit = 255;
-            greenLowerLimit = 0;
-            blueUpperLimit = 255;
-            blueLowerLimit = 0;
-            
-            getColor();
-            
-            //return `RGB(0,0,0)`  //use this line to test the extremes.
-            
-            return `RGB(${randomRed},${randomGreen},${randomBlue})`
-        }
+        allColorSelected.toString();
 
-        else {
+        console.log(allColorSelected);
+
+        document.getElementById("chooseColor").value = allColorSelected;
+
+        //console.log(document.getElementById("chooseColor").id)
+
+        //ifColorSelected();
+
+
+
         
-            console.log('all, all')
-        
-            redUpperLimit = 255;
-            redLowerLimit = 0;
-            greenUpperLimit = 255;
-            greenLowerLimit = 0;
-            blueUpperLimit = 255;
-            blueLowerLimit = 0;
-    
-            getColor();
-    
-            //return `RGB(0,0,0)`  //use this line to test the extremes.
-    
-            return `RGB(${randomRed},${randomGreen},${randomBlue})`
-        }
     }
     //above lines are for all colors
     
     
     //below lines are for red
-    if (document.getElementById("chooseColor").value == "red") {
+    if (document.getElementById("chooseColor").value == "1") {
         
         if (document.getElementById("chooseShade").value == "light") {
             
@@ -241,7 +201,7 @@ function ifColorSelected() {
     //above lines are for red
     
     //below lines are for orange
-    if (document.getElementById("chooseColor").value == "orange") {
+    if (document.getElementById("chooseColor").value == "2") {
         
         if (document.getElementById("chooseShade").value == "light") {
             
@@ -319,7 +279,7 @@ function ifColorSelected() {
     //above lines are for orange
     
     //below lines are for yellow
-    if (document.getElementById("chooseColor").value == "yellow") {
+    if (document.getElementById("chooseColor").value == "3") {
         
         if (document.getElementById("chooseShade").value == "light") {
             
@@ -396,7 +356,7 @@ function ifColorSelected() {
     //above lines are for yellow
     
     //below lines are for green
-    if (document.getElementById("chooseColor").value == "green") {
+    if (document.getElementById("chooseColor").value == "4") {
 
         if (document.getElementById("chooseShade").value == "light") {
             
@@ -473,7 +433,7 @@ function ifColorSelected() {
     //above lines are for green
     
     //below lines are for turquoise
-    if (document.getElementById("chooseColor").value == "turquoise") {
+    if (document.getElementById("chooseColor").value == "5") {
         
         if (document.getElementById("chooseShade").value == "light") {
             
@@ -550,7 +510,7 @@ function ifColorSelected() {
     //above lines are for turquoise
     
     //below lines are for blue
-    if (document.getElementById("chooseColor").value == "blue") {
+    if (document.getElementById("chooseColor").value == "6") {
 
         if (document.getElementById("chooseShade").value == "light") {
             
@@ -628,7 +588,7 @@ function ifColorSelected() {
     //above lines are for blue
     
     //below lines are for purple
-    if (document.getElementById("chooseColor").value == "purple") {
+    if (document.getElementById("chooseColor").value == "7") {
 
         
         if (document.getElementById("chooseShade").value == "light") {
@@ -706,7 +666,7 @@ function ifColorSelected() {
     //above lines are for purple
     
     //below lines are for pink
-    if (document.getElementById("chooseColor").value == "pink") {
+    if (document.getElementById("chooseColor").value == "8") {
         
         if (document.getElementById("chooseShade").value == "light") {
             
@@ -783,7 +743,7 @@ function ifColorSelected() {
     //above lines are for pink
     
     //below lines are for brown
-    if (document.getElementById("chooseColor").value == "brown") {
+    if (document.getElementById("chooseColor").value == "9") {
 
         if (document.getElementById("chooseShade").value == "light") {
             
@@ -861,7 +821,7 @@ function ifColorSelected() {
     //above lines are for brown
     
     //below lines are for gray
-    if (document.getElementById("chooseColor").value == "gray") {
+    if (document.getElementById("chooseColor").value == "10") {
 
         if (document.getElementById("chooseShade").value == "light") {
         
@@ -908,6 +868,9 @@ function ifColorSelected() {
         else {
             
             console.log('all gray')
+
+            redUpperLimit = 255;
+            redLowerLimit = 0;
     
             getColor();
             
