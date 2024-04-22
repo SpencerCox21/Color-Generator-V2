@@ -1,6 +1,5 @@
 
 
-
 let redUpperLimit = 255;
 let greenUpperLimit = 255;
 let blueUpperLimit = 255;
@@ -20,7 +19,6 @@ let allColorSelected = 0;
 
 
 const newColorBtn = document.getElementById('newColorBtn');
-//newColorBtn.addEventListener("click", getColor);
 newColorBtn.addEventListener("click", changeColor);
 
 
@@ -53,11 +51,7 @@ function getColor() {
 };
 
 function getAllColorNumber() {
-    
     allColorSelected = getColorFromAll(allColorLowerLimit, allColorUpperLimit);
-
-    //console.log('all color number has run.')
-
 };
 
 
@@ -74,19 +68,12 @@ function getRandomBlue() {
 };
 
 
-
 function changeColor() {
     const changeColorBox = document.getElementById('colorBox');
-
     const randomRGB = ifColorSelected();  //Get a new random RGB color
-    
     changeColorBox.style.backgroundColor = randomRGB;  //Set the background color of the colorBox
-
     document.getElementById('rgbVariable').innerHTML = randomRGB;
-
-    //console.log("should change.")
 }
-
 
 
 function ifColorSelected() {
@@ -147,8 +134,7 @@ function generateAllColor() {
         allColorSelected = 0;
         
         getAllColorNumber();
-        
-        //console.log(allColorSelected);
+
 
         if (allColorSelected == 1){
             generateRedColor();
@@ -193,11 +179,9 @@ function generateAllColor() {
         else {
             allColorSelected = 0; 
         }
-    
     }
 };
 //above lines are for all colors
-   
 
 //below lines are for red
 function generateRedColor() {
@@ -273,11 +257,10 @@ function generateRedColor() {
             
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
-        
 };
-    //above lines are for red
+//above lines are for red
     
-    //below lines are for orange
+//below lines are for orange
 function generateOrangeColor() {
         
     if (document.getElementById("chooseShade").value == "light") {
@@ -294,7 +277,6 @@ function generateOrangeColor() {
         getColor();
             
         //return `RGB(255,130,50)`  //use this line to test the extremes.
-            
             
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
@@ -353,9 +335,9 @@ function generateOrangeColor() {
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
 };
-    //above lines are for orange
+//above lines are for orange
     
-    //below lines are for yellow
+//below lines are for yellow
 function generateYellowColor() {
         
     if (document.getElementById("chooseShade").value == "light") {
@@ -430,9 +412,9 @@ function generateYellowColor() {
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
 };
-    //above lines are for yellow
+//above lines are for yellow
     
-    //below lines are for green
+//below lines are for green
 function generateGreenColor() {
 
     if (document.getElementById("chooseShade").value == "light") {
@@ -507,9 +489,9 @@ function generateGreenColor() {
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
 };
-    //above lines are for green
+//above lines are for green
     
-    //below lines are for turquoise
+//below lines are for turquoise
 function generateTurquoiseColor() {
         
     if (document.getElementById("chooseShade").value == "light") {
@@ -584,9 +566,9 @@ function generateTurquoiseColor() {
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
 };
-    //above lines are for turquoise
+//above lines are for turquoise
     
-    //below lines are for blue
+//below lines are for blue
 function generateBlueColor() {
 
     if (document.getElementById("chooseShade").value == "light") {
@@ -603,8 +585,7 @@ function generateBlueColor() {
         getColor();
             
         //return `RGB(0,0,0)`  //use this line to test the extremes.
-            
-            
+        
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
     
@@ -662,9 +643,9 @@ function generateBlueColor() {
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
 };
-    //above lines are for blue
+//above lines are for blue
     
-    //below lines are for purple
+//below lines are for purple
 function generatePurpleColor() {
         
     if (document.getElementById("chooseShade").value == "light") {
@@ -739,9 +720,9 @@ function generatePurpleColor() {
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
 };
-    //above lines are for purple
+//above lines are for purple
     
-    //below lines are for pink
+//below lines are for pink
 function generatePinkColor() {
         
     if (document.getElementById("chooseShade").value == "light") {
@@ -816,9 +797,9 @@ function generatePinkColor() {
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
 };
-    //above lines are for pink
+//above lines are for pink
     
-    //below lines are for brown
+//below lines are for brown
 function generateBrownColor() {
 
     if (document.getElementById("chooseShade").value == "light") {
@@ -893,9 +874,9 @@ function generateBrownColor() {
         return `RGB(${randomRed},${randomGreen},${randomBlue})`
     }
 };
-    //above lines are for brown
+//above lines are for brown
     
-    //below lines are for gray
+//below lines are for gray
 function generateGrayColor() {
 
     if (document.getElementById("chooseShade").value == "light") {
@@ -916,7 +897,7 @@ function generateGrayColor() {
         
         console.log('dark gray')
         
-        redUpperLimit = 140;
+        redUpperLimit = 130;
         redLowerLimit = 0;
         
         getColor();
@@ -955,9 +936,3 @@ function generateGrayColor() {
     }
 };
 //above lines are for gray
-
-
-
-
-
-
