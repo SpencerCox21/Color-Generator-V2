@@ -120,7 +120,7 @@ function ifColorSelected() {
     }
     if (document.getElementById("chooseColor").value == "10") {
         generateGrayColor();
-        return `RGB(${randomRed},${randomGreen},${randomBlue})`
+        return `RGB(${randomRed},${randomRed},${randomRed})`
     }
 };
 
@@ -174,7 +174,7 @@ function generateAllColor() {
         }
         if (allColorSelected == 10){
             generateGrayColor();
-            return `RGB(${randomRed},${randomGreen},${randomBlue})`
+            return `RGB(${randomRed},${randomRed},${randomRed})`
         }
         else {
             allColorSelected = 0; 
